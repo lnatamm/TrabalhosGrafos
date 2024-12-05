@@ -1,6 +1,8 @@
 from ortools.linear_solver import pywraplp
 import os
 
+FILE_PATH = os.getcwd() + "\\project.txt"
+
 #Remove o caractere de quebra de linha
 def removeLineBreak(variable):
     variable = variable.rstrip()
@@ -8,8 +10,7 @@ def removeLineBreak(variable):
 
 #Lê o arquivo "project.txt"
 def readFile():
-    filePath = os.getcwd() + "\\AV3_2\\project.txt"
-    file = open(filePath)
+    file = open(FILE_PATH)
     n = file.readline()
     n = int(removeLineBreak(n))
     G = []
@@ -25,8 +26,7 @@ def readFile():
     return G, c
 
 def readAllFile():
-    filePath = os.getcwd() + "\\AV3_2\\project.txt"
-    file = open(filePath)
+    file = open(FILE_PATH)
     return file.readlines()
 
 def printFile():
